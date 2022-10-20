@@ -9,9 +9,14 @@ async function scrapeWeb(url) {
   const txt = await el.getProperty("textContent");
   const rawTxt = await txt.jsonValue();
 
-  console.log({ rawTxt });
+  let populationTemp = rawTxt.replaceAll(",", "").split(" ");
+  const index = populationTemp.indexOf("million");
+  let population = populationTemp.at(index - 1);
+  population += ` ${populationTemp.at(index)}`;
+
+  console.log(population);
 
   browser.close();
 }
 
-scrapeWeb(`https://en.wikipedia.org/wiki/Nigeria`);
+export default scrapeWeb;
