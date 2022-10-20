@@ -1,1 +1,16 @@
-
+.btn--wrapper {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.submit--button {
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 15em;
+  height: 15rem;
+  border: 1px solid gray;
+}
