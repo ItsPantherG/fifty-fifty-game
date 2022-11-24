@@ -1,10 +1,25 @@
 import "./App.css";
-import React, { useState } from "react";
-import data from "./data";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import SubmitBtn from "./components/submitBtn";
 
 function App() {
-  const countries = data();
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => {
+        console.log(res);
+        setCountries = res.json();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+
+  console.log(countries);
+
   const [country1, setCountry1] = useState(randomFromArr(countries));
   const [country2, setCountry2] = useState(randomFromArr(countries));
   const [points, setPoints] = useState(0);
