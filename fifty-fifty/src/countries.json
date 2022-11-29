@@ -28,5 +28,17 @@
     "capital": "Brussels",
     "squareKm": 30528,
     "population": 11584008
+  },
+  {
+    "land": "China",
+    "capital": "Beijing",
+    "squareKm": 9596960,
+    "population": 1412600000
+  },
+  {
+    "land": "Brazil",
+    "capital": "Brasília",
+    "squareKm": 8515767,
+    "population": 217240060
   }
 ]
